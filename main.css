@@ -1,0 +1,220 @@
+:root {
+    --Moderate_violet: hsl(263, 55%, 52%);
+    --Ver_dar_grayish_blue: hsl(217, 19%, 35%);
+    --Ver_dar_blackish_blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    --Light_gray: hsl(0, 0%, 81%);
+    --Light_grayish_blue: hsl(210, 46%, 95%);
+
+    --img-border: hsl(263, 60%, 66%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: var(--Light_grayish_blue);
+
+    display: grid;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+.global {
+    display: grid;
+    margin: 4rem 1rem;
+    gap: 1rem;
+}
+
+/* General Styles */
+
+.card {
+    text-align: start;
+    display: grid;
+    gap: 1rem;
+    padding: 1.3rem 2rem;
+    padding-right: 2.44rem;
+    border-radius: .5rem;
+    box-shadow: 0px 3px 20px -11px rgba(94, 87, 94, 1);
+    transition: box-shadow .3s ease;
+}
+
+.header_card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header_card img {
+    border-radius: 50%;
+    width: 2.2rem;
+}
+
+.header_card .img_border {
+    border: 2px solid var(--img-border);
+}
+
+.daniel_card,
+.jonathan_card,
+.patrick_card {
+    color: var(--White);
+}
+
+.jeanette_card,
+.kira_card {
+    color: var(--Ver_dar_blackish_blue);
+    background: var(--White);
+}
+
+.verified {
+    opacity: .3;
+}
+
+.testimony_title {
+    font-size: 1.3rem;
+}
+
+.testimony {
+    font-size: 14px;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    opacity: .45;
+}
+
+/* Daniel Card */
+
+.daniel_card {
+    background: var(--Moderate_violet) url(./Images/comillas.svg) no-repeat right 18% top;
+}
+
+.daniel_card .testimony {
+    opacity: .7;
+}
+
+.daniel_card .verified {
+    opacity: .5;
+}
+
+/* Jonathan Card */
+
+.jonathan_card {
+    background: var(--Ver_dar_grayish_blue);
+    padding: 1.3rem 2.2rem;
+    padding-right: 1rem;
+}
+
+/* Patrick Card */
+
+.patrick_card {
+    background: var(--Ver_dar_blackish_blue);
+    padding: 1.3rem 2rem;
+    padding-right: 1.7rem;
+}
+
+.patrick_card .testimony_title {
+    padding-right: 1rem;
+}
+
+/* Kira Card */
+
+.kira_card {
+    padding: 1.3rem 2rem;
+    padding-right: 1.2rem;
+}
+
+/* FOOTER */
+
+footer {
+    color: var(--Ver_dar_blackish_blue);
+    font-size: 1rem;
+    margin: auto;
+}
+
+footer a {
+    color: var(--Ver_dar_blackish_blue);
+    text-decoration: none;
+    opacity: .5;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 1000px) {
+
+    body {
+        place-content: center;
+        margin-top: 5rem;
+    }
+
+    .global {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "Daniel Daniel Jonathan Kira"
+            "Jeanette Patrick Patrick Kira";
+        grid-gap: 1.5rem 1.95rem;
+        padding: 1.5rem;
+        max-width: 72.4rem;
+        height: auto;
+    }
+
+    /* Areas */
+
+    .daniel_card {
+        grid-area: Daniel;
+    }
+
+    .daniel_card .testimony_title {
+        padding-right: 1rem;
+    }
+
+    .jonathan_card {
+        grid-area: Jonathan;
+    }
+
+    .jeanette_card {
+        grid-area: Jeanette;
+    }
+
+    .patrick_card {
+        grid-area: Patrick;
+    }
+
+    .kira_card {
+        grid-area: Kira;
+    }
+
+    /**/
+
+    .card:hover {
+        box-shadow: 0px 15px 36px -11px rgba(94, 87, 94, 1);
+    }
+
+    .testimony_title {
+        font-size: 1.21rem;
+    }
+
+    .testimony {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .jeanette_card .testimony_title {
+        padding-right: 2rem;
+    }
+
+    .testimony_patrick {
+        padding-right: 1.5rem;
+    }
+
+    .kira_card .testimony {
+        padding-right: 1.5rem;
+    }
+}
