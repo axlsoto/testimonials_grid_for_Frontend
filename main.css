@@ -24,6 +24,11 @@ body {
     font-size: 13px;
 }
 
+header h1 {
+    position: absolute;
+    opacity: 0;
+}
+
 /* MOBILE */
 
 .global {
